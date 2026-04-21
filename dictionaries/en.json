@@ -1,0 +1,240 @@
+{
+  "nav": {
+    "systems": "Systems",
+    "product": "Product",
+    "catalog": "Catalog",
+    "projects": "Projects",
+    "manufacturing": "Manufacturing",
+    "about": "About",
+    "requestQuote": "Request Quote"
+  },
+  "footer": {
+    "tagline": "Precision windows, doors, and shutters. Engineered in Kosovo, shipped across Europe.",
+    "requestQuote": "Request Quote",
+    "systems": "Systems",
+    "company": "Company",
+    "support": "Support",
+    "systemsLinks": [
+      "Windows",
+      "Doors",
+      "Shutters",
+      "Curtain Walls",
+      "Sliding Systems",
+      "Entrance Doors"
+    ],
+    "companyLinks": [
+      "Manufacturing",
+      "Certifications",
+      "Sustainability",
+      "Projects",
+      "Press",
+      "Careers"
+    ],
+    "supportLinks": [
+      "Technical Library",
+      "CAD Downloads",
+      "Installation Guides",
+      "Distributor Portal",
+      "Contact"
+    ],
+    "copyright": "© 2026 Arcova sh.p.k.",
+    "location": "Ferizaj, Kosovo",
+    "vat": "VAT: XK-810429316",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "imprint": "Imprint"
+  },
+  "home": {
+    "heroEyebrow": "European Manufacturer · Est. 2011",
+    "heroLocation": "Ferizaj, XK",
+    "heroCoords": "42.3706°N 21.1551°E",
+    "heroStatusLabel": "IN PRODUCTION",
+    "heroLeadTimeLabel": "Current lead time",
+    "heroLeadTime": "18–22 days",
+    "heroHeadline": "Precision openings for European building.",
+    "heroSubtitle": "Custom-engineered windows, doors, and shutters. Manufactured in Kosovo. Delivered across the EU with the specification discipline architects expect.",
+    "heroCtaPrimary": "Request a quote",
+    "heroCtaSecondary": "Explore systems",
+    "heroMetrics": [
+      { "k": "Units shipped / 2025", "v": "42,810" },
+      { "k": "Countries served", "v": "19" },
+      { "k": "Avg. U-value", "v": "0.78 W/m²K" }
+    ],
+    "valueItems": [
+      {
+        "n": "01",
+        "t": "Made-to-order",
+        "d": "Every opening engineered to spec. No catalog inventory."
+      },
+      {
+        "n": "02",
+        "t": "German profile systems",
+        "d": "Built on aluplast and Salamander extrusions — engineered in Germany."
+      },
+      {
+        "n": "03",
+        "t": "Fulfillment discipline",
+        "d": "Quoted lead time held at 96.2% on-time last year."
+      },
+      {
+        "n": "04",
+        "t": "Export-ready",
+        "d": "CE-marked, EN 14351 compliant, shipped palletized."
+      }
+    ],
+    "systemsEyebrow": "Systems",
+    "systemsTitle": "Six product families. One manufacturing standard.",
+    "systemsSubtitle": "Every system is made-to-order from extruded profiles, laminated glass, and European-sourced hardware. Configure dimensions, opening type, glazing, and finish at quote.",
+    "systemsCta": "Technical library",
+    "mfgEyebrow": "Manufacturing",
+    "mfgTitle": "14,200 m² of plant. One continuous line.",
+    "mfgBody": "Our Ferizaj facility runs a single integrated production line — from profile extrusion through glazing and QC — so scheduling is tight, tolerances are consistent, and transport loads ship complete. The advantage of in-house control, at export pricing.",
+    "mfgPlantStatus": "LIVE · OPERATIONAL",
+    "mfgPlantShift": "Shift A · 06:00–14:00 CET",
+    "mfgSteps": [
+      {
+        "n": "01",
+        "t": "Specification",
+        "d": "CAD review, structural calc, thermal model. We sign the drawings back to you."
+      },
+      {
+        "n": "02",
+        "t": "Extrusion & cut",
+        "d": "Aluminium and PVC profiles cut to the millimetre on CNC saws."
+      },
+      {
+        "n": "03",
+        "t": "Glazing assembly",
+        "d": "IGUs laminated in Class 10,000 clean lines. Argon-filled, warm-edge spacer."
+      },
+      {
+        "n": "04",
+        "t": "QC & dispatch",
+        "d": "Every unit water-tested to 600 Pa before palletising for EU dispatch."
+      }
+    ],
+    "materialsEyebrow": "Materials",
+    "materialsTitle": "Six substrates. Fully traceable.",
+    "materialsSubtitle": "Every material is specified by lot and certified on delivery. Request a sample kit to see the finish in person.",
+    "materialsCta": "Order sample kit",
+    "materials": [
+      {
+        "t": "Aluminium",
+        "sub": "6060-T66 · thermal break",
+        "swatch": "linear-gradient(180deg,#BFBFB8,#8F8F88)"
+      },
+      {
+        "t": "PVC",
+        "sub": "Multi-chamber · class A",
+        "swatch": "linear-gradient(180deg,#F0EDE5,#C7C2B4)"
+      },
+      {
+        "t": "Oak veneer",
+        "sub": "FSC · satin oil",
+        "swatch": "linear-gradient(180deg,#A88559,#5C4225)"
+      },
+      {
+        "t": "Steel core",
+        "sub": "Security doors · RC3",
+        "swatch": "linear-gradient(180deg,#2E2E2E,#141414)"
+      },
+      {
+        "t": "Laminated IGU",
+        "sub": "4-16Ar-4 · low-E",
+        "swatch": "linear-gradient(180deg,rgba(200,220,230,0.9),rgba(120,150,170,0.9))"
+      },
+      {
+        "t": "RAL custom",
+        "sub": "213 colors · matte/gloss",
+        "swatch": "linear-gradient(90deg,#C9A86A,#8A7A5C,#2B2E2A,#141414)"
+      }
+    ],
+    "projectsEyebrow": "Projects",
+    "projectsTitle": "Recent installations.",
+    "projectsSubtitle": "Selected deliveries from 2024–25. Case studies available on request with full BOQ and thermal performance data.",
+    "projectsCta": "View all projects",
+    "projects": [
+      {
+        "name": "Atrium Residence",
+        "loc": "Vienna, AT",
+        "yr": "2025",
+        "sys": "AW-72 · CW-60",
+        "scale": "214 openings"
+      },
+      {
+        "name": "Block 14 — Mitte",
+        "loc": "Berlin, DE",
+        "yr": "2024",
+        "sys": "PW-88 · RS-45",
+        "scale": "98 openings"
+      },
+      {
+        "name": "Hotel Karst",
+        "loc": "Ljubljana, SI",
+        "yr": "2025",
+        "sys": "SW-190 · ED-120",
+        "scale": "46 openings"
+      },
+      {
+        "name": "Villa Gornji",
+        "loc": "Dubrovnik, HR",
+        "yr": "2024",
+        "sys": "AW-72 · SW-190",
+        "scale": "34 openings"
+      }
+    ],
+    "trustEyebrow": "Certifications & partners",
+    "trustItems": [
+      "aluplast",
+      "Salamander",
+      "CE · EN 14351-1",
+      "ISO 9001",
+      "ISO 14001",
+      "IFT Rosenheim",
+      "PassivHaus",
+      "RC2 / RC3",
+      "QUALANOD",
+      "Roto · Maco"
+    ],
+    "ctaEyebrow": "Start a project",
+    "ctaTitle": "Bring the drawings. We'll return a costed bill of quantities in 72 hours.",
+    "ctaPrimary": "Request a quote",
+    "ctaPhone": "Or call + 383 44 271 008"
+  },
+  "catalog": {
+    "eyebrow": "01 / CATALOG",
+    "eyebrowSub": "12 systems · aluplast · Salamander",
+    "title": "Every system, in one view.",
+    "subtitle": "All Arcova products across PVC and aluminium — filterable by family, profile system, and performance. Contact us for a comparison quote across multiple systems.",
+    "quoteCta": "Multi-system quote",
+    "families": {
+      "all": "All systems",
+      "windows": "Windows",
+      "doors": "Doors",
+      "sliding": "Sliding",
+      "shutters": "Shutters",
+      "curtain": "Curtain walls"
+    },
+    "profiles": {
+      "all": "All profiles",
+      "pvc": "PVC",
+      "alu": "Aluminium"
+    },
+    "sort": {
+      "default": "Sort · Default",
+      "uw": "Sort · Best U-value",
+      "rw": "Sort · Best acoustic",
+      "id": "Sort · ID"
+    }
+  },
+  "pdp": {
+    "breadcrumbHome": "Index",
+    "breadcrumbSystems": "Systems",
+    "viewTabs": {
+      "elevation": "Elevation",
+      "section": "Section",
+      "render": "Render",
+      "installed": "Installed"
+    }
+  }
+}
