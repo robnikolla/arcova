@@ -520,6 +520,68 @@ export default async function AboutPage({
           </div>
         </section>
 
+        {/* Showroom */}
+        <section style={{ borderBottom: "1px solid var(--line)", padding: "120px 0" }}>
+          <div className="container">
+            <div
+              className="mob-stack"
+              style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "start" }}
+            >
+              <div>
+                <div className="eyebrow" style={{ marginBottom: 24 }}>
+                  <span className="dot" />
+                  <span>Showroom · Milano</span>
+                </div>
+                <h2 style={{ textWrap: "balance", marginBottom: 24 } as React.CSSProperties}>
+                  See the systems<br />at full scale.
+                </h2>
+                <p style={{ fontSize: 17, color: "var(--ink-2)", lineHeight: 1.6, maxWidth: 480, marginBottom: 40 }}>
+                  Our Milano showroom is open to architects, developers, and specifiers by appointment.
+                  Bring a project brief — our team will walk you through the full system range,
+                  material samples, and hardware options in a single session.
+                </p>
+                <div style={{ display: "flex", gap: 12 }}>
+                  <Link href="#" className="btn btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: 12 }}>
+                    Book a visit <Arrow />
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <div style={{ border: "1px solid var(--line-2)" }}>
+                  {[
+                    { k: "Address", v: "Via della Moscova 40, 20121 Milano" },
+                    { k: "Hours", v: "Tuesday – Saturday, 10:00 – 18:00" },
+                    { k: "Access", v: "By appointment preferred" },
+                    { k: "Email", v: "showroom@arcova.eu" },
+                    { k: "Phone", v: "+ 39 02 8710 6200" },
+                  ].map((row, i, arr) => (
+                    <div
+                      key={row.k}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "140px 1fr",
+                        padding: "18px 24px",
+                        borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none",
+                      }}
+                    >
+                      <span style={{ fontFamily: "var(--f-mono)", fontSize: 11, color: "var(--muted)", letterSpacing: "0.1em", textTransform: "uppercase", paddingTop: 2 }}>{row.k}</span>
+                      <span style={{ fontSize: 15 }}>{row.v}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginTop: 24 }}>
+                  <Placeholder
+                    aspect="16/9"
+                    label="SHOWROOM · MILANO"
+                    caption="Via della Moscova 40"
+                    src="https://picsum.photos/seed/showroom-milano/800/450"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{ padding: "120px 0" }}>
           <div className="container">

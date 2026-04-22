@@ -10,7 +10,7 @@ import { QuoteButton } from "@/components/quote-button";
 import { HScroll } from "@/components/ui/h-scroll";
 
 export const metadata: Metadata = {
-  title: "Acrova — Precision Windows, Doors & Shutters",
+  title: "Arcova — Precision Windows, Doors & Shutters",
   description:
     "Custom-engineered windows, doors, and shutters. Manufactured in Kosovo. Delivered across the EU.",
 };
@@ -792,6 +792,53 @@ export default async function HomePage({
                 Order sample kit <Arrow size={12} />
               </Link>
             </div>
+          </div>
+        </section>
+
+        {/* ── Showroom strip ──────────────────────────────────────────── */}
+        <section style={{ background: "var(--ink)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+          <div
+            className="container"
+            style={{
+              padding: "28px var(--pad-x)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: 16,
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 24,
+                fontFamily: "var(--f-mono)",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.6)",
+              }}
+            >
+              <span style={{ color: "rgba(255,255,255,0.9)" }}>Showroom open in Milano</span>
+              <span>Via della Moscova 40, 20121</span>
+              <span>Tue – Sat, 10:00–18:00</span>
+            </div>
+            <Link
+              href="#"
+              style={{
+                fontFamily: "var(--f-mono)",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.85)",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              Book a visit <Arrow size={10} />
+            </Link>
           </div>
         </section>
 

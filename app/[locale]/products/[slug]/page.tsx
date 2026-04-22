@@ -4,6 +4,11 @@ import type { Locale } from "@/i18n";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PdpClient } from "./pdp-client";
+import { PdpDoorClient } from "./pdp-door-client";
+import { PdpShutterClient } from "./pdp-shutter-client";
+
+const DOOR_SLUGS = ["ed-120"];
+const SHUTTER_SLUGS = ["rs-45"];
 
 interface PageProps {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -85,6 +90,59 @@ const PRODUCTS: Record<
     ],
     relatedSlugs: ["aw-72", "pw-92s"],
   },
+  "ed-120": {
+    id: "ED-120",
+    name: "Entrance Door 120",
+    tagline: "Security door, 120 mm frame.",
+    description: "Steel-reinforced entrance door with mineral wool core, concealed multi-point locking, and RC3 certification. Available in RC4 for sensitive applications.",
+    heroSpecs: [
+      { k: "Thermal", v: "0.66", u: "W/m²K (Ud)" },
+      { k: "Acoustic", v: "42", u: "dB (Rw)" },
+      { k: "Security", v: "RC3", u: "EN 1627" },
+      { k: "Airtight", v: "Class 4", u: "EN 12207" },
+    ],
+    specs: [
+      { k: "Frame depth", v: "120 mm" },
+      { k: "Leaf thickness", v: "82 mm" },
+      { k: "Core insulation", v: "CFC-free mineral wool, 60mm" },
+      { k: "Security class", v: "RC3 standard · RC4 upgrade" },
+      { k: "Max. dimensions", v: "1600 × 2750 mm (single leaf)" },
+      { k: "Certifications", v: "CE · EN 14351-1 · RC3 · EI 30 option" },
+    ],
+    downloads: [
+      { name: "ED-120 Technical Data Sheet", type: "PDF", size: "1.9 MB" },
+      { name: "ED-120 CAD Library (.dwg)", type: "DWG", size: "6.1 MB" },
+      { name: "ED-120 BIM Object (.rfa)", type: "RFA", size: "9.4 MB" },
+      { name: "ED-120 RC3 Test Certificate", type: "PDF", size: "540 KB" },
+    ],
+    relatedSlugs: ["aw-72", "sw-190", "rs-45"],
+  },
+  "rs-45": {
+    id: "RS-45",
+    name: "Roller Shutter System",
+    tagline: "Motorised shutter, wind class 6.",
+    description: "Three foam-filled aluminium slat profiles with Somfy or KNX automation. Wind class 4–6 depending on profile depth. Light screening to full thermal blackout.",
+    heroSpecs: [
+      { k: "Wind class", v: "6", u: "EN 13241" },
+      { k: "Thermal Ud", v: "0.65", u: "W/m²K (RS-77)" },
+      { k: "Light block", v: "99%", u: "closed" },
+      { k: "Acoustic", v: "40", u: "dB (Rw)" },
+    ],
+    specs: [
+      { k: "Slat profiles", v: "RS-45 · RS-55 · RS-77" },
+      { k: "Max. curtain area", v: "16 m² (RS-45)" },
+      { k: "Drive options", v: "Tubular motor · Belt drive · Solar" },
+      { k: "Control", v: "RTS · io-homecontrol · KNX · BACnet" },
+      { k: "Certifications", v: "CE · EN 13241 · Somfy certified" },
+    ],
+    downloads: [
+      { name: "RS-45 Technical Data Sheet", type: "PDF", size: "1.6 MB" },
+      { name: "RS-45 CAD Library (.dwg)", type: "DWG", size: "4.8 MB" },
+      { name: "RS-45 BIM Object (.rfa)", type: "RFA", size: "7.2 MB" },
+      { name: "RS-45 Motor Wiring Diagrams", type: "PDF", size: "880 KB" },
+    ],
+    relatedSlugs: ["aw-72", "ed-120", "sw-190"],
+  },
 };
 
 export default async function ProductPage({ params }: PageProps) {
@@ -118,8 +176,10 @@ export default async function ProductPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Full PDP — client for interactive sections */}
-        <PdpClient locale={locale} />
+        {/* Full PDP — client for interactive sections, routed by product type */}
+        {DOOR_SLUGS.includes(slug) ? <PdpDoorClient locale={locale} />
+          : SHUTTER_SLUGS.includes(slug) ? <PdpShutterClient locale={locale} />
+          : <PdpClient locale={locale} />}
       </main>
       <Footer locale={locale} />
     </>

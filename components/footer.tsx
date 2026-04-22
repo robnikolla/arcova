@@ -26,7 +26,7 @@ const FOOTER_COLS = [
       "Certifications",
       "Sustainability",
       "Projects",
-      "Press",
+      "Showroom Milano",
       "Careers",
     ],
     note: "Fabricator · aluplast · Salamander",
@@ -49,6 +49,55 @@ export function Footer({ locale }: FooterProps) {
       style={{ background: "var(--ink)", color: "var(--bg)", marginTop: 0 }}
     >
       <div className="container" style={{ padding: "80px var(--pad-x) 32px" }}>
+        {/* Showroom strip */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 16,
+            paddingBottom: 32,
+            marginBottom: 48,
+            borderBottom: "1px solid rgba(255,255,255,0.12)",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 24,
+              fontFamily: "var(--f-mono)",
+              fontSize: 12,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.65)",
+            }}
+          >
+            <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>Showroom · Milano</span>
+            <span>Via della Moscova 40, 20121</span>
+            <span>Tue – Sat · 10:00 – 18:00</span>
+            <span>By appointment preferred</span>
+          </div>
+          <Link
+            href="#"
+            style={{
+              fontFamily: "var(--f-mono)",
+              fontSize: 11,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "var(--bg)",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              opacity: 0.85,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Book a visit <Arrow size={10} />
+          </Link>
+        </div>
+
         <div
           className="mob-stack"
           style={{
