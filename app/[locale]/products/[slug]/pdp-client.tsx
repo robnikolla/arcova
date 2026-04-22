@@ -8,6 +8,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { SpecRow } from "@/components/ui/spec-row";
 import { Corners } from "@/components/ui/corners";
 import { useQuoteModal } from "@/components/quote-modal-provider";
+import { HScroll } from "@/components/ui/h-scroll";
 
 const TABS = [
   { k: "elevation", l: "Elevation" },
@@ -282,9 +283,9 @@ export function PdpClient({ locale }: { locale: string }) {
       {/* Product Hero */}
       <section style={{ borderBottom: "1px solid var(--line)" }}>
         <div className="container" style={{ padding: "48px var(--pad-x) 0" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "start" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "start" }}>
             {/* Left: drawing */}
-            <div style={{ position: "sticky", top: 96 }}>
+            <div className="mob-static" style={{ position: "sticky", top: 96 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
                 <div style={{ display: "flex", gap: 24 }}>
                   {TABS.map((t) => (
@@ -392,12 +393,12 @@ export function PdpClient({ locale }: { locale: string }) {
           />
 
           {/* Opening types */}
-          <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
             <div>
               <div style={{ fontFamily: "var(--f-mono)", fontSize: 10, color: "var(--muted)", letterSpacing: "0.14em", marginBottom: 6 }}>STEP 01</div>
               <div style={{ fontSize: 20, fontWeight: 500 }}>Opening type</div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
+            <div className="mob-2col" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
               {OPENINGS.map((o, i) => (
                 <button key={o.k} onClick={() => setSelectedOpening(o.k)}
                   style={{
@@ -415,12 +416,12 @@ export function PdpClient({ locale }: { locale: string }) {
           </div>
 
           {/* Glazing */}
-          <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
             <div>
               <div style={{ fontFamily: "var(--f-mono)", fontSize: 10, color: "var(--muted)", letterSpacing: "0.14em", marginBottom: 6 }}>STEP 02</div>
               <div style={{ fontSize: 20, fontWeight: 500 }}>Glazing</div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
+            <div className="mob-2col" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
               {GLAZINGS.map((g, i) => (
                 <button key={g.k} onClick={() => setSelectedGlazing(g.k)}
                   style={{
@@ -439,12 +440,12 @@ export function PdpClient({ locale }: { locale: string }) {
           </div>
 
           {/* Finish */}
-          <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "32px 0", borderBottom: "1px solid var(--line-2)", alignItems: "start" }}>
             <div>
               <div style={{ fontFamily: "var(--f-mono)", fontSize: 10, color: "var(--muted)", letterSpacing: "0.14em", marginBottom: 6 }}>STEP 03</div>
               <div style={{ fontSize: 20, fontWeight: 500 }}>Finish</div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
+            <div className="mob-3col" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
               {FINISHES.map((f, i) => (
                 <button key={f.k} onClick={() => setSelectedFinish(f.k)}
                   style={{
@@ -475,26 +476,28 @@ export function PdpClient({ locale }: { locale: string }) {
             title="Certified across four configurations."
             subtitle="All values measured per harmonised EN standards by notified body IFT Rosenheim. Declaration of Performance available for download."
           />
-          <div style={{ border: "1px solid var(--line-2)", overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(4, 1fr)", background: "var(--ink)", color: "var(--bg)" }}>
-              <div style={{ padding: "16px 20px", fontFamily: "var(--f-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase" }}>Metric</div>
-              {PERF_COLS.map((c) => (
-                <div key={c} style={{ padding: "16px 20px", fontFamily: "var(--f-mono)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", borderLeft: "1px solid rgba(255,255,255,0.15)" }}>{c}</div>
-              ))}
-            </div>
-            {PERF_DATA.map((d, i) => (
-              <div key={i} style={{ display: "grid", gridTemplateColumns: "2fr repeat(4, 1fr)", borderTop: i > 0 ? "1px solid var(--line)" : "none", background: i % 2 === 0 ? "var(--bg)" : "var(--bg-2)" }}>
-                <div style={{ padding: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontSize: 15, fontWeight: 500 }}>{d.metric}</span>
-                  <span style={{ fontFamily: "var(--f-mono)", fontSize: 11, color: "var(--muted)" }}>{d.unit}</span>
-                </div>
-                {d.vals.map((v, j) => (
-                  <div key={j} style={{ padding: 20, fontFamily: "var(--f-mono)", fontSize: 15, fontWeight: 500, borderLeft: "1px solid var(--line)", background: j === 0 ? "color-mix(in oklab, var(--accent) 8%, transparent)" : "transparent" }}>
-                    {v}
-                  </div>
+          <div style={{ border: "1px solid var(--line-2)", overflowX: "auto" }}>
+            <div style={{ minWidth: 640 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "2fr repeat(4, 1fr)", background: "var(--ink)", color: "var(--bg)" }}>
+                <div style={{ padding: "16px 20px", fontFamily: "var(--f-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase" }}>Metric</div>
+                {PERF_COLS.map((c) => (
+                  <div key={c} style={{ padding: "16px 20px", fontFamily: "var(--f-mono)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", borderLeft: "1px solid rgba(255,255,255,0.15)" }}>{c}</div>
                 ))}
               </div>
-            ))}
+              {PERF_DATA.map((d, i) => (
+                <div key={i} style={{ display: "grid", gridTemplateColumns: "2fr repeat(4, 1fr)", borderTop: i > 0 ? "1px solid var(--line)" : "none", background: i % 2 === 0 ? "var(--bg)" : "var(--bg-2)" }}>
+                  <div style={{ padding: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: 15, fontWeight: 500 }}>{d.metric}</span>
+                    <span style={{ fontFamily: "var(--f-mono)", fontSize: 11, color: "var(--muted)" }}>{d.unit}</span>
+                  </div>
+                  {d.vals.map((v, j) => (
+                    <div key={j} style={{ padding: 20, fontFamily: "var(--f-mono)", fontSize: 15, fontWeight: 500, borderLeft: "1px solid var(--line)", background: j === 0 ? "color-mix(in oklab, var(--accent) 8%, transparent)" : "transparent" }}>
+                      {v}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -502,7 +505,7 @@ export function PdpClient({ locale }: { locale: string }) {
       {/* Cross Section */}
       <section style={{ borderBottom: "1px solid var(--line)", background: "var(--ink)", color: "var(--bg)" }}>
         <div className="container" style={{ padding: "120px var(--pad-x)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
             <div>
               <div className="eyebrow" style={{ color: "rgba(255,255,255,0.55)", marginBottom: 24 }}>
                 <span className="num" style={{ color: "rgba(255,255,255,0.55)" }}>04</span>
@@ -547,7 +550,7 @@ export function PdpClient({ locale }: { locale: string }) {
             title="The full sheet."
             subtitle="Complete technical data for AW-72. For structural calculations and thermal modelling, download the DOP or contact engineering."
           />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "56px 64px" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "56px 64px" }}>
             {SPEC_SECTIONS.map((s) => (
               <div key={s.t}>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 20 }}>
@@ -569,7 +572,7 @@ export function PdpClient({ locale }: { locale: string }) {
       <section style={{ borderBottom: "1px solid var(--line)", background: "var(--bg-2)", padding: "100px 0" }}>
         <div className="container">
           <SectionHeader index="06" eyebrow="Technical library" title="Downloads." />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
+          <div className="mob-stack" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid var(--line-2)" }}>
             {DOWNLOADS.map((f, i) => (
               <a href="#" key={f.t}
                 style={{
@@ -596,7 +599,7 @@ export function PdpClient({ locale }: { locale: string }) {
       <section style={{ padding: "100px 0" }}>
         <div className="container">
           <SectionHeader eyebrow="Compatible systems" title="Specified together." />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+          <HScroll itemWidth="max(260px, calc(33.33% - 22px))" gap={32} autoScrollMs={0}>
             {RELATED.map((x) => (
               <Link
                 key={x.slug}
@@ -619,7 +622,7 @@ export function PdpClient({ locale }: { locale: string }) {
                 </div>
               </Link>
             ))}
-          </div>
+          </HScroll>
         </div>
       </section>
     </>

@@ -368,6 +368,7 @@ section { position: relative; }
   /* Grid helpers — override inline gridTemplateColumns */
   .mob-stack { grid-template-columns: 1fr !important; }
   .mob-2col  { grid-template-columns: 1fr 1fr !important; }
+  .mob-3col  { grid-template-columns: 1fr 1fr 1fr !important; }
   .mob-col   { flex-direction: column !important; align-items: flex-start !important; height: auto !important; }
   .mob-gap   { gap: 24px !important; }
   .mob-pad-y { padding-top: 12px !important; padding-bottom: 12px !important; }
