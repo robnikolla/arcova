@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { QuoteButton } from "@/components/quote-button";
+import { HScroll } from "@/components/ui/h-scroll";
 
 export const metadata: Metadata = {
   title: "Acrova — Precision Windows, Doors & Shutters",
@@ -79,6 +80,7 @@ export default async function HomePage({
             </div>
 
             <div
+              className="mob-stack"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr auto",
@@ -127,6 +129,7 @@ export default async function HomePage({
             </div>
 
             <div
+              className="mob-stack"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1.2fr 1fr",
@@ -239,6 +242,7 @@ export default async function HomePage({
         <section style={{ borderBottom: "1px solid var(--line)" }}>
           <div className="container" style={{ padding: "72px var(--pad-x)" }}>
             <div
+              className="mob-2col"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
@@ -316,13 +320,7 @@ export default async function HomePage({
                 </Link>
               }
             />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: 32,
-              }}
-            >
+            <HScroll itemWidth="max(280px, calc(33.33% - 22px))" gap={32} autoScrollMs={4000}>
               {SYSTEMS.map((s) => (
                 <Link
                   key={s.id}
@@ -374,7 +372,7 @@ export default async function HomePage({
                   </div>
                 </Link>
               ))}
-            </div>
+            </HScroll>
           </div>
         </section>
 
@@ -382,6 +380,7 @@ export default async function HomePage({
         <section style={{ background: "var(--ink)", color: "var(--bg)", position: "relative" }}>
           <div className="container" style={{ padding: "120px var(--pad-x)" }}>
             <div
+              className="mob-stack"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
@@ -448,6 +447,7 @@ export default async function HomePage({
             </div>
 
             <div
+              className="mob-2col"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
@@ -501,13 +501,7 @@ export default async function HomePage({
               title="Six substrates. Fully traceable."
               subtitle="Every material is specified by lot and certified on delivery. Request a sample kit to see the finish in person."
             />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(6, 1fr)",
-                gap: 16,
-              }}
-            >
+            <HScroll itemWidth="max(130px, calc(16.66% - 14px))" gap={16} autoScrollMs={5000}>
               {MATERIALS.map((m, i) => (
                 <div key={i}>
                   <div
@@ -547,7 +541,7 @@ export default async function HomePage({
                   </div>
                 </div>
               ))}
-            </div>
+            </HScroll>
             <div style={{ marginTop: 40, display: "flex", justifyContent: "flex-end" }}>
               <Link
                 href={`/${locale}/contact`}
@@ -584,32 +578,14 @@ export default async function HomePage({
               }
             />
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "2fr 1fr",
-                gap: 32,
-                marginBottom: 32,
-              }}
-            >
-              <div>
-                <Placeholder aspect="4/3" src={PROJECTS[0].img} label={PROJECTS[0].name.toUpperCase()} />
-                <ProjectMeta p={PROJECTS[0]} big />
-              </div>
-              <div>
-                <Placeholder aspect="4/3" src={PROJECTS[1].img} label={PROJECTS[1].name.toUpperCase()} />
-                <ProjectMeta p={PROJECTS[1]} />
-              </div>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-              {PROJECTS.slice(2).map((p) => (
+            <HScroll itemWidth="max(300px, calc(50% - 16px))" gap={32} autoScrollMs={5500}>
+              {PROJECTS.map((p) => (
                 <div key={p.name}>
                   <Placeholder aspect="16/10" src={p.img} label={p.name.toUpperCase()} />
                   <ProjectMeta p={p} />
                 </div>
               ))}
-            </div>
+            </HScroll>
           </div>
         </section>
 
@@ -652,6 +628,7 @@ export default async function HomePage({
         <section style={{ padding: "120px 0", position: "relative" }}>
           <div className="container">
             <div
+              className="mob-stack"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr auto",

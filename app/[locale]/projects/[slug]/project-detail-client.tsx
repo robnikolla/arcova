@@ -103,6 +103,7 @@ export function ProjectDetailClient({
       <section style={{ borderBottom: "1px solid var(--line)" }}>
         <div className="container" style={{ padding: "0 var(--pad-x)" }}>
           <div
+            className="mob-2col"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(5, 1fr)",
@@ -147,6 +148,7 @@ export function ProjectDetailClient({
       <section style={{ borderBottom: "1px solid var(--line)", padding: "96px 0" }}>
         <div className="container">
           <div
+            className="mob-stack"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1.4fr",
@@ -155,7 +157,7 @@ export function ProjectDetailClient({
             }}
           >
             {/* Text */}
-            <div style={{ position: "sticky", top: 96 }}>
+            <div className="mob-static" style={{ position: "sticky", top: 96 }}>
               <div className="eyebrow" style={{ marginBottom: 24 }}>
                 <span className="num">01</span>
                 <span className="dot" />
@@ -402,6 +404,7 @@ export function ProjectDetailClient({
             subtitle="Available to registered architects and contractors on request."
           />
           <div
+            className="mob-stack"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(2, 1fr)",
@@ -469,6 +472,7 @@ export function ProjectDetailClient({
       <section style={{ padding: "100px 0" }}>
         <div className="container">
           <div
+            className="mob-col mob-gap"
             style={{
               display: "flex",
               justifyContent: "space-between",
