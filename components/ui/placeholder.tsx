@@ -39,8 +39,9 @@ export function Placeholder({
           src={src}
           alt={label}
           fill
+          unoptimized
           sizes="(max-width: 820px) 100vw, 50vw"
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", position: "absolute" }}
           onError={() => setImgFailed(true)}
         />
         {children}
@@ -49,7 +50,10 @@ export function Placeholder({
   }
 
   return (
-    <div className="placeholder" style={{ aspectRatio: aspect, width: "100%", ...style }}>
+    <div
+      className="placeholder"
+      style={{ aspectRatio: aspect, width: "100%", ...style }}
+    >
       <span className="label">{label}</span>
       {caption && <span className="caption">{caption}</span>}
       <div className="ticks" />

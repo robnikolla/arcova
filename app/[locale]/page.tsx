@@ -16,33 +16,136 @@ export const metadata: Metadata = {
 };
 
 const SYSTEMS = [
-  { id: "aw-72", tag: "AW-72", name: "Aluminium Windows", specs: "Uw 0.78 · Rw 44dB · RC2", stock: "14 openings · 5 finishes", img: "https://picsum.photos/seed/facade-geo/1200/900" },
-  { id: "pw-88", tag: "PW-88", name: "Thermal PVC Windows", specs: "Uw 0.74 · Rw 42dB · RC2", stock: "12 openings · 34 colors", img: "https://picsum.photos/seed/arch-b/1200/900" },
-  { id: "ed-120", tag: "ED-120", name: "Entrance Doors", specs: "Ud 0.66 · RC3 · fingerprint", stock: "9 panels · bespoke sizing", img: "https://picsum.photos/seed/arch-c/1200/900" },
-  { id: "rs-45", tag: "RS-45", name: "Roller Shutters", specs: "Motorised · wind class 6", stock: "5 profiles · 18 colors", img: "https://picsum.photos/seed/facade-brk/1200/900" },
-  { id: "sw-190", tag: "SW-190", name: "Sliding Systems", specs: "Lift-slide · 400kg sash", stock: "min. threshold 20mm", img: "https://picsum.photos/seed/arch-d/1200/900" },
-  { id: "cw-60", tag: "CW-60", name: "Curtain Walls", specs: "Mullion-transom · structural", stock: "up to 3.6m spans", img: "https://picsum.photos/seed/facade-con/1200/900" },
+  {
+    id: "aw-72",
+    tag: "AW-72",
+    name: "Aluminium Windows",
+    specs: "Uw 0.78 · Rw 44dB · RC2",
+    stock: "14 openings · 5 finishes",
+    img: "/images/homepage/aluminium-windows-cat.png",
+  },
+  {
+    id: "pw-88",
+    tag: "PW-88",
+    name: "Thermal PVC Windows",
+    specs: "Uw 0.74 · Rw 42dB · RC2",
+    stock: "12 openings · 34 colors",
+    img: "/images/homepage/pvc-windows-cat.png",
+  },
+  {
+    id: "ed-120",
+    tag: "ED-120",
+    name: "Entrance Doors",
+    specs: "Ud 0.66 · RC3 · fingerprint",
+    stock: "9 panels · bespoke sizing",
+    img: "/images/homepage/entrance-door-cat.png",
+  },
+  {
+    id: "rs-45",
+    tag: "RS-45",
+    name: "Roller Shutters",
+    specs: "Motorised · wind class 6",
+    stock: "5 profiles · 18 colors",
+    img: "/images/homepage/roller-shutter-cat.png",
+  },
+  {
+    id: "sw-190",
+    tag: "SW-190",
+    name: "Sliding Systems",
+    specs: "Lift-slide · 400kg sash",
+    stock: "min. threshold 20mm",
+    img: "/images/homepage/slide-system-cat.png",
+  },
+  {
+    id: "cw-60",
+    tag: "CW-60",
+    name: "Curtain Walls",
+    specs: "Mullion-transom · structural",
+    stock: "up to 3.6m spans",
+    img: "/images/homepage/curtain-wall-cat.png",
+  },
 ];
 
 const MATERIALS = [
-  { t: "Aluminium", sub: "6060-T66 · thermal break", swatch: "linear-gradient(180deg,#BFBFB8,#8F8F88)" },
-  { t: "PVC", sub: "Multi-chamber · class A", swatch: "linear-gradient(180deg,#F0EDE5,#C7C2B4)" },
-  { t: "Oak veneer", sub: "FSC · satin oil", swatch: "linear-gradient(180deg,#A88559,#5C4225)" },
-  { t: "Steel core", sub: "Security doors · RC3", swatch: "linear-gradient(180deg,#2E2E2E,#141414)" },
-  { t: "Laminated IGU", sub: "4-16Ar-4 · low-E", swatch: "linear-gradient(180deg,rgba(200,220,230,0.9),rgba(120,150,170,0.9))" },
-  { t: "RAL custom", sub: "213 colors · matte/gloss", swatch: "linear-gradient(90deg,#C9A86A,#8A7A5C,#2B2E2A,#141414)" },
+  {
+    t: "Aluminium",
+    sub: "6060-T66 · thermal break",
+    swatch: "linear-gradient(180deg,#BFBFB8,#8F8F88)",
+  },
+  {
+    t: "PVC",
+    sub: "Multi-chamber · class A",
+    swatch: "linear-gradient(180deg,#F0EDE5,#C7C2B4)",
+  },
+  {
+    t: "Oak veneer",
+    sub: "FSC · satin oil",
+    swatch: "linear-gradient(180deg,#A88559,#5C4225)",
+  },
+  {
+    t: "Steel core",
+    sub: "Security doors · RC3",
+    swatch: "linear-gradient(180deg,#2E2E2E,#141414)",
+  },
+  {
+    t: "Laminated IGU",
+    sub: "4-16Ar-4 · low-E",
+    swatch:
+      "linear-gradient(180deg,rgba(200,220,230,0.9),rgba(120,150,170,0.9))",
+  },
+  {
+    t: "RAL custom",
+    sub: "213 colors · matte/gloss",
+    swatch: "linear-gradient(90deg,#C9A86A,#8A7A5C,#2B2E2A,#141414)",
+  },
 ];
 
 const PROJECTS = [
-  { name: "Atrium Residence", loc: "Vienna, AT", yr: "2025", sys: "AW-72 · CW-60", scale: "214 openings", img: "https://picsum.photos/seed/facade-geo/1200/900" },
-  { name: "Block 14 — Mitte", loc: "Berlin, DE", yr: "2024", sys: "PW-88 · RS-45", scale: "98 openings", img: "https://picsum.photos/seed/facade-con/1200/900" },
-  { name: "Hotel Karst", loc: "Ljubljana, SI", yr: "2025", sys: "SW-190 · ED-120", scale: "46 openings", img: "https://picsum.photos/seed/facade-brk/1200/900" },
-  { name: "Villa Gornji", loc: "Dubrovnik, HR", yr: "2024", sys: "AW-72 · SW-190", scale: "34 openings", img: "https://picsum.photos/seed/facade-met/1200/900" },
+  {
+    name: "Atrium Residence",
+    loc: "Vienna, AT",
+    yr: "2025",
+    sys: "AW-72 · CW-60",
+    scale: "214 openings",
+    img: "/images/projects/project-1.png",
+  },
+  {
+    name: "Block 14 — Mitte",
+    loc: "Berlin, DE",
+    yr: "2024",
+    sys: "PW-88 · RS-45",
+    scale: "98 openings",
+    img: "/images/projects/project-2.png",
+  },
+  {
+    name: "Hotel Karst",
+    loc: "Ljubljana, SI",
+    yr: "2025",
+    sys: "SW-190 · ED-120",
+    scale: "46 openings",
+    img: "/images/projects/project-3.png ",
+  },
+  {
+    name: "Villa Gornji",
+    loc: "Dubrovnik, HR",
+    yr: "2024",
+    sys: "AW-72 · SW-190",
+    scale: "34 openings",
+    img: "/images/projects/project-4.png",
+  },
 ];
 
 const TRUST_ITEMS = [
-  "aluplast", "Salamander", "CE · EN 14351-1", "ISO 9001", "ISO 14001",
-  "IFT Rosenheim", "PassivHaus", "RC2 / RC3", "QUALANOD", "Roto · Maco",
+  "aluplast",
+  "Salamander",
+  "CE · EN 14351-1",
+  "ISO 9001",
+  "ISO 14001",
+  "IFT Rosenheim",
+  "PassivHaus",
+  "RC2 / RC3",
+  "QUALANOD",
+  "Roto · Maco",
 ];
 
 export default async function HomePage({
@@ -58,7 +161,10 @@ export default async function HomePage({
       <main>
         {/* ── Hero ───────────────────────────────────────────────────── */}
         <section style={{ borderBottom: "1px solid var(--line)" }}>
-          <div className="container" style={{ paddingTop: 48, paddingBottom: 0 }}>
+          <div
+            className="container"
+            style={{ paddingTop: 48, paddingBottom: 0 }}
+          >
             <div
               style={{
                 display: "flex",
@@ -146,7 +252,9 @@ export default async function HomePage({
                   lineHeight: 1.45,
                 }}
               >
-                Custom-engineered windows, doors, and shutters. Manufactured in Kosovo. Delivered across the EU with the specification discipline architects expect.
+                Custom-engineered windows, doors, and shutters. Manufactured in
+                Kosovo. Delivered across the EU with the specification
+                discipline architects expect.
               </p>
               <div
                 style={{
@@ -162,7 +270,11 @@ export default async function HomePage({
                 <Link
                   href={`/${locale}/catalog`}
                   className="btn btn-ghost"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 12 }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
                 >
                   Explore systems <Arrow />
                 </Link>
@@ -173,7 +285,7 @@ export default async function HomePage({
           <div style={{ position: "relative" }}>
             <Placeholder
               aspect="21/9"
-              src="https://picsum.photos/seed/facade-hero/1800/800"
+              src="/images/homepage/hero-image.png"
               label="HERO · 01"
               style={{ aspectRatio: "21/9" }}
             >
@@ -229,7 +341,13 @@ export default async function HomePage({
                   >
                     {m.k}
                   </div>
-                  <div style={{ fontSize: 22, fontWeight: 500, letterSpacing: "-0.01em" }}>
+                  <div
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 500,
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
                     {m.v}
                   </div>
                 </div>
@@ -250,16 +368,33 @@ export default async function HomePage({
               }}
             >
               {[
-                { n: "01", t: "Made-to-order", d: "Every opening engineered to spec. No catalog inventory." },
-                { n: "02", t: "German profile systems", d: "Built on aluplast and Salamander extrusions — engineered in Germany." },
-                { n: "03", t: "Fulfillment discipline", d: "Quoted lead time held at 96.2% on-time last year." },
-                { n: "04", t: "Export-ready", d: "CE-marked, EN 14351 compliant, shipped palletized." },
+                {
+                  n: "01",
+                  t: "Made-to-order",
+                  d: "Every opening engineered to spec. No catalog inventory.",
+                },
+                {
+                  n: "02",
+                  t: "German profile systems",
+                  d: "Built on aluplast and Salamander extrusions — engineered in Germany.",
+                },
+                {
+                  n: "03",
+                  t: "Fulfillment discipline",
+                  d: "Quoted lead time held at 96.2% on-time last year.",
+                },
+                {
+                  n: "04",
+                  t: "Export-ready",
+                  d: "CE-marked, EN 14351 compliant, shipped palletized.",
+                },
               ].map((item, i, arr) => (
                 <div
                   key={item.n}
                   style={{
                     padding: "8px 32px 8px 0",
-                    borderRight: i < arr.length - 1 ? "1px solid var(--line)" : "none",
+                    borderRight:
+                      i < arr.length - 1 ? "1px solid var(--line)" : "none",
                     paddingLeft: i === 0 ? 0 : 32,
                   }}
                 >
@@ -281,7 +416,9 @@ export default async function HomePage({
                     >
                       {item.n}
                     </span>
-                    <div style={{ flex: 1, height: 1, background: "var(--line)" }} />
+                    <div
+                      style={{ flex: 1, height: 1, background: "var(--line)" }}
+                    />
                   </div>
                   <h4
                     style={{
@@ -293,7 +430,14 @@ export default async function HomePage({
                   >
                     {item.t}
                   </h4>
-                  <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>
+                  <p
+                    style={{
+                      color: "var(--muted)",
+                      fontSize: 14,
+                      lineHeight: 1.55,
+                      margin: 0,
+                    }}
+                  >
                     {item.d}
                   </p>
                 </div>
@@ -303,7 +447,9 @@ export default async function HomePage({
         </section>
 
         {/* ── Systems ─────────────────────────────────────────────────── */}
-        <section style={{ borderBottom: "1px solid var(--line)", padding: "120px 0" }}>
+        <section
+          style={{ borderBottom: "1px solid var(--line)", padding: "120px 0" }}
+        >
           <div className="container">
             <SectionHeader
               index="02"
@@ -314,13 +460,21 @@ export default async function HomePage({
                 <Link
                   href={`/${locale}/catalog`}
                   className="btn btn-ghost btn-sm"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
                 >
                   Technical library <Arrow size={12} />
                 </Link>
               }
             />
-            <HScroll itemWidth="max(280px, calc(33.33% - 22px))" gap={32} autoScrollMs={4000}>
+            <HScroll
+              itemWidth="max(280px, calc(33.33% - 22px))"
+              gap={32}
+              autoScrollMs={4000}
+            >
               {SYSTEMS.map((s) => (
                 <Link
                   key={s.id}
@@ -351,7 +505,15 @@ export default async function HomePage({
                       >
                         {s.tag} · System
                       </div>
-                      <h4 style={{ fontSize: 22, fontWeight: 500, marginBottom: 8 }}>{s.name}</h4>
+                      <h4
+                        style={{
+                          fontSize: 22,
+                          fontWeight: 500,
+                          marginBottom: 8,
+                        }}
+                      >
+                        {s.name}
+                      </h4>
                       <div
                         style={{
                           fontSize: 13,
@@ -362,7 +524,13 @@ export default async function HomePage({
                       >
                         {s.specs}
                       </div>
-                      <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 4 }}>
+                      <div
+                        style={{
+                          fontSize: 13,
+                          color: "var(--muted)",
+                          marginTop: 4,
+                        }}
+                      >
                         {s.stock}
                       </div>
                     </div>
@@ -377,7 +545,13 @@ export default async function HomePage({
         </section>
 
         {/* ── Manufacturing ───────────────────────────────────────────── */}
-        <section style={{ background: "var(--ink)", color: "var(--bg)", position: "relative" }}>
+        <section
+          style={{
+            background: "var(--ink)",
+            color: "var(--bg)",
+            position: "relative",
+          }}
+        >
           <div className="container" style={{ padding: "120px var(--pad-x)" }}>
             <div
               className="mob-stack"
@@ -394,8 +568,20 @@ export default async function HomePage({
                   className="eyebrow"
                   style={{ color: "rgba(255,255,255,0.55)", marginBottom: 24 }}
                 >
-                  <span className="num" style={{ color: "rgba(255,255,255,0.55)" }}>03</span>
-                  <span style={{ width: 6, height: 6, background: "var(--accent)", borderRadius: "50%" }} />
+                  <span
+                    className="num"
+                    style={{ color: "rgba(255,255,255,0.55)" }}
+                  >
+                    03
+                  </span>
+                  <span
+                    style={{
+                      width: 6,
+                      height: 6,
+                      background: "var(--accent)",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <span>Manufacturing</span>
                 </div>
                 <h2 style={{ color: "var(--bg)" } as React.CSSProperties}>
@@ -412,14 +598,17 @@ export default async function HomePage({
                   maxWidth: 540,
                 }}
               >
-                Our Ferizaj facility runs a single integrated production line — from profile extrusion through glazing and QC — so scheduling is tight, tolerances are consistent, and transport loads ship complete. The advantage of in-house control, at export pricing.
+                Our Ferizaj facility runs a single integrated production line —
+                from profile extrusion through glazing and QC — so scheduling is
+                tight, tolerances are consistent, and transport loads ship
+                complete. The advantage of in-house control, at export pricing.
               </p>
             </div>
 
             <div style={{ position: "relative", marginBottom: 80 }}>
               <Placeholder
                 aspect="21/8"
-                src="https://picsum.photos/seed/plant-wide/1800/700"
+                src="/images/homepage/facility.png"
                 label="PLANT · A2"
                 style={{ filter: "saturate(0) brightness(0.85)" }}
               />
@@ -442,7 +631,9 @@ export default async function HomePage({
                 }}
               >
                 <span>LIVE · OPERATIONAL</span>
-                <span style={{ color: "rgba(255,255,255,0.6)" }}>Shift A · 06:00–14:00 CET</span>
+                <span style={{ color: "rgba(255,255,255,0.6)" }}>
+                  Shift A · 06:00–14:00 CET
+                </span>
               </div>
             </div>
 
@@ -455,10 +646,26 @@ export default async function HomePage({
               }}
             >
               {[
-                { n: "01", t: "Specification", d: "CAD review, structural calc, thermal model. We sign the drawings back to you." },
-                { n: "02", t: "Extrusion & cut", d: "Aluminium and PVC profiles cut to the millimetre on CNC saws." },
-                { n: "03", t: "Glazing assembly", d: "IGUs laminated in Class 10,000 clean lines. Argon-filled, warm-edge spacer." },
-                { n: "04", t: "QC & dispatch", d: "Every unit water-tested to 600 Pa before palletising for EU dispatch." },
+                {
+                  n: "01",
+                  t: "Specification",
+                  d: "CAD review, structural calc, thermal model. We sign the drawings back to you.",
+                },
+                {
+                  n: "02",
+                  t: "Extrusion & cut",
+                  d: "Aluminium and PVC profiles cut to the millimetre on CNC saws.",
+                },
+                {
+                  n: "03",
+                  t: "Glazing assembly",
+                  d: "IGUs laminated in Class 10,000 clean lines. Argon-filled, warm-edge spacer.",
+                },
+                {
+                  n: "04",
+                  t: "QC & dispatch",
+                  d: "Every unit water-tested to 600 Pa before palletising for EU dispatch.",
+                },
               ].map((s, i) => (
                 <div
                   key={s.n}
@@ -466,7 +673,8 @@ export default async function HomePage({
                     padding: "32px 24px 32px 0",
                     borderTop: "1px solid rgba(255,255,255,0.15)",
                     paddingLeft: i === 0 ? 0 : 24,
-                    borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.15)" : "none",
+                    borderLeft:
+                      i > 0 ? "1px solid rgba(255,255,255,0.15)" : "none",
                   }}
                 >
                   <div
@@ -480,10 +688,24 @@ export default async function HomePage({
                   >
                     STAGE {s.n}
                   </div>
-                  <h4 style={{ fontSize: 22, fontWeight: 500, color: "var(--bg)", marginBottom: 12 }}>
+                  <h4
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 500,
+                      color: "var(--bg)",
+                      marginBottom: 12,
+                    }}
+                  >
                     {s.t}
                   </h4>
-                  <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.65)",
+                      fontSize: 14,
+                      lineHeight: 1.55,
+                      margin: 0,
+                    }}
+                  >
                     {s.d}
                   </p>
                 </div>
@@ -501,7 +723,11 @@ export default async function HomePage({
               title="Six substrates. Fully traceable."
               subtitle="Every material is specified by lot and certified on delivery. Request a sample kit to see the finish in person."
             />
-            <HScroll itemWidth="max(130px, calc(16.66% - 14px))" gap={16} autoScrollMs={5000}>
+            <HScroll
+              itemWidth="max(130px, calc(16.66% - 14px))"
+              gap={16}
+              autoScrollMs={5000}
+            >
               {MATERIALS.map((m, i) => (
                 <div key={i}>
                   <div
@@ -528,7 +754,11 @@ export default async function HomePage({
                       M·0{i + 1}
                     </div>
                   </div>
-                  <div style={{ fontSize: 15, fontWeight: 500, marginBottom: 2 }}>{m.t}</div>
+                  <div
+                    style={{ fontSize: 15, fontWeight: 500, marginBottom: 2 }}
+                  >
+                    {m.t}
+                  </div>
                   <div
                     style={{
                       fontSize: 12,
@@ -542,7 +772,13 @@ export default async function HomePage({
                 </div>
               ))}
             </HScroll>
-            <div style={{ marginTop: 40, display: "flex", justifyContent: "flex-end" }}>
+            <div
+              style={{
+                marginTop: 40,
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
               <Link
                 href={`/${locale}/contact`}
                 className="ulink"
@@ -560,7 +796,9 @@ export default async function HomePage({
         </section>
 
         {/* ── Projects ────────────────────────────────────────────────── */}
-        <section style={{ borderBottom: "1px solid var(--line)", padding: "120px 0" }}>
+        <section
+          style={{ borderBottom: "1px solid var(--line)", padding: "120px 0" }}
+        >
           <div className="container">
             <SectionHeader
               index="05"
@@ -571,17 +809,29 @@ export default async function HomePage({
                 <Link
                   href={`/${locale}/projects`}
                   className="btn btn-ghost btn-sm"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
                 >
                   View all projects <Arrow size={12} />
                 </Link>
               }
             />
 
-            <HScroll itemWidth="max(300px, calc(50% - 16px))" gap={32} autoScrollMs={5500}>
+            <HScroll
+              itemWidth="max(300px, calc(50% - 16px))"
+              gap={32}
+              autoScrollMs={5500}
+            >
               {PROJECTS.map((p) => (
                 <div key={p.name}>
-                  <Placeholder aspect="16/10" src={p.img} label={p.name.toUpperCase()} />
+                  <Placeholder
+                    aspect="16/10"
+                    src={p.img}
+                    label={p.name.toUpperCase()}
+                  />
                   <ProjectMeta p={p} />
                 </div>
               ))}
@@ -642,7 +892,14 @@ export default async function HomePage({
                   <span className="dot" />
                   <span>Start a project</span>
                 </div>
-                <h2 style={{ textWrap: "balance", maxWidth: 900 } as React.CSSProperties}>
+                <h2
+                  style={
+                    {
+                      textWrap: "balance",
+                      maxWidth: 900,
+                    } as React.CSSProperties
+                  }
+                >
                   Bring the drawings.
                   <br />
                   We&apos;ll return a costed bill of quantities in 72 hours.
@@ -695,7 +952,11 @@ function ProjectMeta({ p, big }: { p: (typeof PROJECTS)[0]; big?: boolean }) {
       }}
     >
       <div>
-        <h4 style={{ fontSize: big ? 28 : 20, fontWeight: 500, marginBottom: 8 }}>{p.name}</h4>
+        <h4
+          style={{ fontSize: big ? 28 : 20, fontWeight: 500, marginBottom: 8 }}
+        >
+          {p.name}
+        </h4>
         <div
           style={{
             fontFamily: "var(--f-mono)",

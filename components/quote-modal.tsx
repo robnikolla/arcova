@@ -98,6 +98,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div
+          className="modal-header"
           style={{
             padding: "24px 32px",
             borderBottom: "1px solid var(--line)",
@@ -144,6 +145,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
 
         {/* Progress */}
         <div
+          className="modal-progress"
           style={{
             padding: "16px 32px",
             borderBottom: "1px solid var(--line)",
@@ -189,6 +191,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                 {i < step ? "✓" : i + 1}
               </div>
               <span
+                className="modal-step-label"
                 style={{
                   fontFamily: "var(--f-mono)",
                   fontSize: 11,
@@ -201,6 +204,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
               </span>
               {i < STEPS.length - 1 && (
                 <div
+                  className="modal-step-connector"
                   style={{
                     flex: 1,
                     height: 1,
@@ -214,7 +218,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
         </div>
 
         {/* Body */}
-        <div style={{ padding: 32, overflow: "auto", flex: 1 }}>
+        <div className="modal-body" style={{ padding: 32, overflow: "auto", flex: 1 }}>
           {/* Step 0: Project */}
           {step === 0 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
@@ -235,6 +239,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                 </div>
               </div>
               <div
+                className="mob-stack"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -363,6 +368,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           {step === 2 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
               <div
+                className="mob-stack"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -421,6 +427,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           {step === 3 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
               <div
+                className="mob-stack"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -445,6 +452,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                 </div>
               </div>
               <div
+                className="mob-stack"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -506,6 +514,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                 ].map((r, i) => (
                   <div
                     key={r[0]}
+                    className="modal-review-row"
                     style={{
                       display: "grid",
                       gridTemplateColumns: "180px 1fr",
@@ -554,6 +563,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
 
         {/* Footer */}
         <div
+          className="modal-footer"
           style={{
             padding: "20px 32px",
             borderTop: "1px solid var(--line)",
