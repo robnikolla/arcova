@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./ui/logo";
 import { Arrow } from "./ui/arrow";
+import { QuoteButton } from "./quote-button";
 
 interface FooterProps {
   locale: string;
@@ -49,6 +50,7 @@ export function Footer({ locale }: FooterProps) {
     >
       <div className="container" style={{ padding: "80px var(--pad-x) 32px" }}>
         <div
+          className="mob-stack"
           style={{
             display: "grid",
             gridTemplateColumns: "1.3fr 1fr 1fr 1fr",
@@ -70,20 +72,16 @@ export function Footer({ locale }: FooterProps) {
               Precision windows, doors, and shutters. Engineered in Kosovo,
               shipped across Europe.
             </p>
-            <Link
-              href={`/${locale}/contact`}
+            <QuoteButton
               className="btn"
               style={{
                 marginTop: 32,
                 borderColor: "var(--bg)",
                 color: "var(--bg)",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 12,
               }}
             >
               Request Quote <Arrow size={12} />
-            </Link>
+            </QuoteButton>
           </div>
 
           {FOOTER_COLS.map((col) => (

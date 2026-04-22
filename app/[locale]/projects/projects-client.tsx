@@ -30,7 +30,7 @@ export function ProjectsClient({ locale }: { locale: string }) {
         }}
       >
         <div
-          className="container"
+          className="container mob-col mob-pad-y"
           style={{
             padding: "0 var(--pad-x)",
             display: "flex",
@@ -114,6 +114,7 @@ export function ProjectsClient({ locale }: { locale: string }) {
               Featured
             </div>
             <div
+              className="mob-stack"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
@@ -145,6 +146,7 @@ export function ProjectsClient({ locale }: { locale: string }) {
               </div>
             )}
             <div
+              className="mob-2col"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(3, 1fr)",
