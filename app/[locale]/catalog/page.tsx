@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Arrow } from "@/components/ui/arrow";
 import { CatalogClient } from "./catalog-client";
 import Link from "next/link";
+import { QuoteButton } from "@/components/quote-button";
 
 export const metadata: Metadata = {
   title: "Catalog — Every System in One View",
@@ -61,17 +62,9 @@ export default async function CatalogPage({
                   comparison quote across multiple systems.
                 </p>
               </div>
-              <Link
-                href={`/${locale}/contact`}
-                className="btn btn-primary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 12,
-                }}
-              >
+              <QuoteButton className="btn btn-primary">
                 Multi-system quote <Arrow />
-              </Link>
+              </QuoteButton>
             </div>
           </div>
         </section>
