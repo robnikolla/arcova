@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Arrow } from "@/components/ui/arrow";
 import { Placeholder } from "@/components/ui/placeholder";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -262,6 +263,12 @@ function SectionDrawing() {
     </div>
   );
 }
+
+const RELATED = [
+  { slug: "aw-85", id: "AW-85", t: "Passive-House Aluminium", u: "0.68" },
+  { slug: "pw-88", id: "PW-88", t: "Thermal PVC Alternative", u: "0.74" },
+  { slug: "cw-60", id: "CW-60", t: "Matching Curtain Wall", u: "1.1" },
+];
 
 export function PdpClient({ locale }: { locale: string }) {
   const { openQuote } = useQuoteModal();
@@ -580,6 +587,37 @@ export function PdpClient({ locale }: { locale: string }) {
                 </div>
                 <Arrow />
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Systems */}
+      <section style={{ padding: "100px 0" }}>
+        <div className="container">
+          <SectionHeader eyebrow="Compatible systems" title="Specified together." />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+            {RELATED.map((x) => (
+              <Link
+                key={x.slug}
+                href={`/${locale}/products/${x.slug}`}
+                className="prod-card"
+                style={{ display: "block" }}
+              >
+                <Placeholder
+                  aspect="4/5"
+                  src={`https://picsum.photos/seed/related-${x.slug}/800/1000`}
+                  label={x.id}
+                />
+                <div style={{ padding: "20px 0 0", display: "flex", justifyContent: "space-between" }}>
+                  <div>
+                    <div style={{ fontFamily: "var(--f-mono)", fontSize: 11, color: "var(--muted)", letterSpacing: "0.14em", marginBottom: 6, textTransform: "uppercase" }}>{x.id}</div>
+                    <h4 style={{ fontSize: 20, fontWeight: 500 }}>{x.t}</h4>
+                    <div style={{ fontSize: 13, color: "var(--muted)", fontFamily: "var(--f-mono)", marginTop: 4 }}>Uw {x.u} W/m²K</div>
+                  </div>
+                  <Arrow />
+                </div>
+              </Link>
             ))}
           </div>
         </div>

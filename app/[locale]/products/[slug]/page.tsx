@@ -3,9 +3,6 @@ import Link from "next/link";
 import type { Locale } from "@/i18n";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { Arrow } from "@/components/ui/arrow";
-import { Placeholder } from "@/components/ui/placeholder";
-import { SectionHeader } from "@/components/ui/section-header";
 import { PdpClient } from "./pdp-client";
 
 interface PageProps {
@@ -90,17 +87,9 @@ const PRODUCTS: Record<
   },
 };
 
-const RELATED_PRODUCTS = [
-  { slug: "aw-72", id: "AW-72", name: "Aluminium Window 72", specs: "Uw 0.78 · Rw 44dB", img: "https://picsum.photos/seed/facade-geo/1200/900" },
-  { slug: "aw-85", id: "AW-85", name: "Aluminium Window 85", specs: "Uw 0.68 · Rw 46dB", img: "https://picsum.photos/seed/facade-met/1200/900" },
-  { slug: "pw-88", id: "PW-88", name: "PVC Window 88", specs: "Uw 0.74 · Rw 44dB", img: "https://picsum.photos/seed/arch-b/1200/900" },
-  { slug: "sw-190", id: "SW-190", name: "Lift-Slide System 190", specs: "Uw 0.88 · Rw 38dB", img: "https://picsum.photos/seed/facade-con/1200/900" },
-];
-
 export default async function ProductPage({ params }: PageProps) {
   const { locale, slug } = await params;
   const product = PRODUCTS[slug] ?? PRODUCTS["aw-72"];
-  const relatedProducts = RELATED_PRODUCTS.filter((p) => product.relatedSlugs.includes(p.slug));
 
   return (
     <>
@@ -129,173 +118,8 @@ export default async function ProductPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Product hero — client for tab switching */}
-        <PdpClient product={product} locale={locale} />
-
-        {/* Technical specs */}
-        <section style={{ borderBottom: "1px solid var(--line)", padding: "80px 0" }}>
-          <div className="container">
-            <SectionHeader
-              eyebrow="Specifications"
-              title="Technical data."
-              index="02"
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "0 80px",
-              }}
-            >
-              <table className="spec">
-                <tbody>
-                  {product.specs.slice(0, Math.ceil(product.specs.length / 2)).map((row) => (
-                    <tr key={row.k}>
-                      <td>{row.k}</td>
-                      <td>{row.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <table className="spec">
-                <tbody>
-                  {product.specs.slice(Math.ceil(product.specs.length / 2)).map((row) => (
-                    <tr key={row.k}>
-                      <td>{row.k}</td>
-                      <td>{row.v}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* Downloads */}
-        <section style={{ borderBottom: "1px solid var(--line)", padding: "80px 0" }}>
-          <div className="container">
-            <SectionHeader
-              eyebrow="Downloads"
-              title="Technical library."
-              index="03"
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 1,
-                background: "var(--line)",
-                border: "1px solid var(--line)",
-              }}
-            >
-              {product.downloads.map((d) => (
-                <a
-                  key={d.name}
-                  href="#"
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "20px 24px",
-                    background: "var(--bg)",
-                    gap: 16,
-                    transition: "background .15s",
-                  }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "var(--bg-2)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.background = "var(--bg)")
-                  }
-                >
-                  <div>
-                    <div style={{ fontSize: 15, fontWeight: 500, marginBottom: 4 }}>
-                      {d.name}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: "var(--f-mono)",
-                        fontSize: 11,
-                        color: "var(--muted)",
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {d.type} · {d.size}
-                    </div>
-                  </div>
-                  <Arrow size={12} />
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Related systems */}
-        <section style={{ padding: "80px 0" }}>
-          <div className="container">
-            <SectionHeader
-              eyebrow="Related"
-              title="Other systems."
-              index="04"
-              rightSlot={
-                <Link
-                  href={`/${locale}/catalog`}
-                  className="btn btn-ghost btn-sm"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
-                >
-                  Full catalog <Arrow size={12} />
-                </Link>
-              }
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: 32,
-              }}
-            >
-              {relatedProducts.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/${locale}/products/${p.slug}`}
-                  className="prod-card"
-                  style={{ display: "block" }}
-                >
-                  <Placeholder aspect="4/3" src={p.img} label={p.id} />
-                  <div style={{ padding: "16px 0 0", display: "flex", justifyContent: "space-between" }}>
-                    <div>
-                      <div
-                        style={{
-                          fontFamily: "var(--f-mono)",
-                          fontSize: 11,
-                          color: "var(--muted)",
-                          marginBottom: 4,
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {p.id}
-                      </div>
-                      <h4 style={{ fontSize: 18, fontWeight: 500 }}>{p.name}</h4>
-                      <div
-                        style={{
-                          fontSize: 12,
-                          color: "var(--ink-2)",
-                          fontFamily: "var(--f-mono)",
-                          marginTop: 4,
-                        }}
-                      >
-                        {p.specs}
-                      </div>
-                    </div>
-                    <Arrow />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Full PDP — client for interactive sections */}
+        <PdpClient locale={locale} />
       </main>
       <Footer locale={locale} />
     </>

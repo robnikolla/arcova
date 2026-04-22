@@ -6,6 +6,7 @@ import { Placeholder } from "@/components/ui/placeholder";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { QuoteButton } from "@/components/quote-button";
 
 export const metadata: Metadata = {
   title: "Acrova — Precision Windows, Doors & Shutters",
@@ -152,13 +153,9 @@ export default async function HomePage({
                   flexWrap: "wrap",
                 }}
               >
-                <Link
-                  href={`/${locale}/contact`}
-                  className="btn btn-primary"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 12 }}
-                >
+                <QuoteButton className="btn btn-primary">
                   Request a quote <Arrow />
-                </Link>
+                </QuoteButton>
                 <Link
                   href={`/${locale}/catalog`}
                   className="btn btn-ghost"
@@ -682,19 +679,12 @@ export default async function HomePage({
                   alignItems: "flex-end",
                 }}
               >
-                <Link
-                  href={`/${locale}/contact`}
+                <QuoteButton
                   className="btn btn-primary"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 12,
-                    padding: "18px 28px",
-                    fontSize: 15,
-                  }}
+                  style={{ padding: "18px 28px", fontSize: 15 }}
                 >
                   Request a quote <Arrow />
-                </Link>
+                </QuoteButton>
                 <div
                   style={{
                     fontFamily: "var(--f-mono)",

@@ -19,8 +19,15 @@ const SYSTEMS = [
 ];
 
 const COUNTRIES = [
-  "Germany", "Austria", "Switzerland", "France", "Italy",
-  "Netherlands", "Belgium", "Slovenia", "Croatia",
+  "Germany",
+  "Austria",
+  "Switzerland",
+  "France",
+  "Italy",
+  "Netherlands",
+  "Belgium",
+  "Slovenia",
+  "Croatia",
 ];
 
 const STEPS = ["Project", "Systems", "Details", "Contact", "Review"];
@@ -100,7 +107,7 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <Logo size={22} showWord={false} />
+            <Logo size={22} />
             <span
               style={{
                 fontFamily: "var(--f-mono)",
@@ -126,7 +133,11 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
             }}
           >
             <svg width="12" height="12" viewBox="0 0 12 12">
-              <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" strokeWidth="1.2" />
+              <path
+                d="M1 1L11 11M11 1L1 11"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              />
             </svg>
           </button>
         </div>
@@ -141,16 +152,33 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           }}
         >
           {STEPS.map((s, i) => (
-            <div key={s} style={{ flex: 1, display: "flex", alignItems: "center", gap: 10 }}>
+            <div
+              key={s}
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
               <div
                 style={{
                   width: 22,
                   height: 22,
-                  border: "1px solid " + (i <= step ? "var(--ink)" : "var(--line-2)"),
+                  border:
+                    "1px solid " + (i <= step ? "var(--ink)" : "var(--line-2)"),
                   background:
-                    i < step ? "var(--ink)" : i === step ? "var(--accent)" : "transparent",
+                    i < step
+                      ? "var(--ink)"
+                      : i === step
+                        ? "var(--accent)"
+                        : "transparent",
                   color:
-                    i < step ? "var(--bg)" : i === step ? "var(--bg)" : "var(--muted)",
+                    i < step
+                      ? "var(--bg)"
+                      : i === step
+                        ? "var(--bg)"
+                        : "var(--muted)",
                   display: "grid",
                   placeItems: "center",
                   fontFamily: "var(--f-mono)",
@@ -193,21 +221,31 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
               <div>
                 <label style={monoLabel}>Project type</label>
                 <div className="segment">
-                  {["residential", "commercial", "hospitality", "civic"].map((t) => (
-                    <button
-                      key={t}
-                      onClick={() => update("projectType", t)}
-                      className={data.projectType === t ? "active" : ""}
-                    >
-                      {t}
-                    </button>
-                  ))}
+                  {["residential", "commercial", "hospitality", "civic"].map(
+                    (t) => (
+                      <button
+                        key={t}
+                        onClick={() => update("projectType", t)}
+                        className={data.projectType === t ? "active" : ""}
+                      >
+                        {t}
+                      </button>
+                    ),
+                  )}
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 40,
+                }}
+              >
                 <div>
                   <label style={monoLabel}>Units (approx.)</label>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+                  <div
+                    style={{ display: "flex", alignItems: "baseline", gap: 12 }}
+                  >
                     <input
                       type="range"
                       min="1"
@@ -216,7 +254,14 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                       onChange={(e) => update("units", +e.target.value)}
                       style={{ flex: 1, accentColor: "var(--ink)" }}
                     />
-                    <span style={{ fontSize: 28, fontWeight: 500, minWidth: 80, textAlign: "right" }}>
+                    <span
+                      style={{
+                        fontSize: 28,
+                        fontWeight: 500,
+                        minWidth: 80,
+                        textAlign: "right",
+                      }}
+                    >
                       {data.units}
                     </span>
                   </div>
@@ -265,10 +310,15 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                     style={{
                       padding: 20,
                       textAlign: "left",
-                      borderRight: i % 2 === 0 ? "1px solid var(--line-2)" : "none",
+                      borderRight:
+                        i % 2 === 0 ? "1px solid var(--line-2)" : "none",
                       borderBottom: i < 4 ? "1px solid var(--line-2)" : "none",
-                      background: data.systems.includes(s.id) ? "var(--ink)" : "transparent",
-                      color: data.systems.includes(s.id) ? "var(--bg)" : "var(--ink)",
+                      background: data.systems.includes(s.id)
+                        ? "var(--ink)"
+                        : "transparent",
+                      color: data.systems.includes(s.id)
+                        ? "var(--bg)"
+                        : "var(--ink)",
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
@@ -299,7 +349,9 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                         flexShrink: 0,
                       }}
                     >
-                      {data.systems.includes(s.id) && <span style={{ fontSize: 11 }}>✓</span>}
+                      {data.systems.includes(s.id) && (
+                        <span style={{ fontSize: 11 }}>✓</span>
+                      )}
                     </div>
                   </button>
                 ))}
@@ -310,7 +362,13 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           {/* Step 2: Details */}
           {step === 2 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 40,
+                }}
+              >
                 <div className="field">
                   <label>Delivery country</label>
                   <select
@@ -362,7 +420,13 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
           {/* Step 3: Contact */}
           {step === 3 && (
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 40,
+                }}
+              >
                 <div className="field">
                   <label>Full name</label>
                   <input
@@ -380,7 +444,13 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                   />
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 40,
+                }}
+              >
                 <div className="field">
                   <label>Work email</label>
                   <input
@@ -392,7 +462,10 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                 </div>
                 <div className="field">
                   <label>Role</label>
-                  <select value={data.role} onChange={(e) => update("role", e.target.value)}>
+                  <select
+                    value={data.role}
+                    onChange={(e) => update("role", e.target.value)}
+                  >
                     <option value="architect">Architect</option>
                     <option value="developer">Developer</option>
                     <option value="contractor">Contractor</option>
@@ -421,7 +494,10 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
               </div>
               <div style={{ border: "1px solid var(--line-2)" }}>
                 {[
-                  ["Project", `${data.projectType} · ${data.units} units · ${data.timeline}`],
+                  [
+                    "Project",
+                    `${data.projectType} · ${data.units} units · ${data.timeline}`,
+                  ],
                   ["Systems", data.systems.join(" · ") || "—"],
                   ["Delivery", data.country],
                   ["Contact", `${data.name || "—"} · ${data.company || "—"}`],
@@ -462,9 +538,14 @@ export function QuoteModal({ open, onClose }: QuoteModalProps) {
                   color: "var(--muted)",
                 }}
               >
-                <input type="checkbox" defaultChecked style={{ marginTop: 3 }} />
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  style={{ marginTop: 3, accentColor: "black", padding: "5px" }}
+                />
                 <span>
-                  I consent to Arcova contacting me about this project. We reply within 72 hours.
+                  I consent to Arcova contacting me about this project. We reply
+                  within 72 hours.
                 </span>
               </div>
             </div>
