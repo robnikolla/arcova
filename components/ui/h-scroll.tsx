@@ -10,6 +10,8 @@ import {
   isValidElement,
 } from "react";
 
+const DESKTOP_BREAKPOINT = 821;
+
 interface HScrollProps {
   children: React.ReactNode;
   gap?: number;
@@ -29,7 +31,16 @@ export function HScroll({
   const trackRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const [fillFrac, setFillFrac] = useState(0.33);
+  const [isDesktop, setIsDesktop] = useState(false);
   const hovered = useRef(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`);
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const sync = useCallback(() => {
     const el = trackRef.current;
@@ -40,6 +51,7 @@ export function HScroll({
   }, []);
 
   useEffect(() => {
+    if (isDesktop) return;
     const el = trackRef.current;
     if (!el) return;
     el.addEventListener("scroll", sync, { passive: true });
@@ -50,10 +62,10 @@ export function HScroll({
       el.removeEventListener("scroll", sync);
       ro.disconnect();
     };
-  }, [sync]);
+  }, [sync, isDesktop]);
 
   useEffect(() => {
-    if (!autoScrollMs) return;
+    if (!autoScrollMs || isDesktop) return;
     const id = setInterval(() => {
       if (hovered.current) return;
       const el = trackRef.current;
@@ -66,11 +78,29 @@ export function HScroll({
       }
     }, autoScrollMs);
     return () => clearInterval(id);
-  }, [autoScrollMs, fillFrac]);
+  }, [autoScrollMs, fillFrac, isDesktop]);
 
   const items = Children.toArray(children);
   const indicatorLeft = `${progress * (1 - fillFrac) * 100}%`;
   const indicatorWidth = `${fillFrac * 100}%`;
+
+  if (isDesktop) {
+    return (
+      <div style={{ display: "flex", flexWrap: "wrap", gap, ...style }}>
+        {items.map((child, i) =>
+          isValidElement(child) ? (
+            cloneElement(child as React.ReactElement<React.HTMLAttributes<HTMLElement>>, {
+              key: i,
+              style: {
+                width: itemWidth,
+                ...(child.props as React.HTMLAttributes<HTMLElement>).style,
+              },
+            })
+          ) : child
+        )}
+      </div>
+    );
+  }
 
   return (
     <div
